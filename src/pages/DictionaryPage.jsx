@@ -6,13 +6,15 @@ import { useFetching } from '../hooks/useFetching'
 
 // import services
 import DictionaryService from '../API/DictionaryService'
+import LetterNavList from '../components/UI/LetterNav/LetterNavList'
+import { Outlet } from 'react-router-dom'
 
 
 
 // TODO разобраться с .eslintrc.json
 
     const DictionaryPage = () => {
-        // словарь
+    // словарь
     const [sectionsNames, setSectionsNames] = useState([])
     // запрос словаря
     const [fetchSectionsNames, isSectionsNamesLoading, sectionsNameError] = useFetching(async () => {
@@ -22,19 +24,19 @@ import DictionaryService from '../API/DictionaryService'
 
     useEffect(() => {
         fetchSectionsNames()
-    }, [])
+    }, [sectionsNames])
 
     return (
-        <div>
-            {sectionsNameError &&
-                <div className="error-message">Произошла ошибка: {sectionsNameError}</div>
-            }
-            
-            <div>Список:</div>
-            {sectionsNames.map((section, index) => 
-                <div key={index}>section: {section}</div>
-            )}
-        </div>
+        <>
+            <div>
+                <h1>Dictionary Page</h1>
+                <LetterNavList sectionsNames={sectionsNames}/>                
+            </div>
+            <div>
+                <Outlet />
+            </div>
+        </>
+        
     )
 }
 
