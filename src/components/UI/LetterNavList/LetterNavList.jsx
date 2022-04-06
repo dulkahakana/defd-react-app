@@ -6,12 +6,12 @@ const LetterNavList = ({ sectionsNames }) => {
 
     return (
         <div className={letterNavList}>
-            {sectionsNames.map((sectionsName, index) =>
+            {sectionsNames.map((sectionName) =>
                 <LetterButton
-                    key={index}
-                    to={sectionsName}
+                    key={sectionName}
+                    to={sectionName}
                 >
-                    {sectionsName}
+                    {sectionName}
                 </LetterButton>
             )}
         </div>

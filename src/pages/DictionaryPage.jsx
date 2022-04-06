@@ -6,14 +6,10 @@ import { useFetching } from '../hooks/useFetching'
 
 // import services
 import DictionaryService from '../API/DictionaryService'
-import LetterNavList from '../components/UI/LetterNav/LetterNavList'
+import LetterNavList from '../components/UI/LetterNavList/LetterNavList'
 import { Outlet } from 'react-router-dom'
 
-
-
-// TODO разобраться с .eslintrc.json
-
-    const DictionaryPage = () => {
+const DictionaryPage = () => {
     // словарь
     const [sectionsNames, setSectionsNames] = useState([])
     // запрос словаря
@@ -24,13 +20,13 @@ import { Outlet } from 'react-router-dom'
 
     useEffect(() => {
         fetchSectionsNames()
-    }, [sectionsNames])
+    }, [])
 
     return (
         <>
             <div>
                 <h1>Dictionary Page</h1>
-                <LetterNavList sectionsNames={sectionsNames}/>                
+                <LetterNavList sectionsNames={sectionsNames} />                
             </div>
             <div>
                 <Outlet />
