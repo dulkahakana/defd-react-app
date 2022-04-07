@@ -25,7 +25,6 @@ const DictionaryPage = () => {
     return (
         <>
             <div>
-                <h1>Dictionary Page</h1>
                 <LetterNavList sectionsNames={sectionsNames} />                
             </div>
             <div>

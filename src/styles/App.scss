@@ -11,7 +11,18 @@
 }
 
 .App {
-    width: 800px;
+    // width: 800px;
+    max-width: 1440px;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
+}
+
+// SectionPage
+.section-page {
+    display: flex;
+    margin-top: 1.5em;
+    flex-direction: column;
+    align-items: center;
+    
 }

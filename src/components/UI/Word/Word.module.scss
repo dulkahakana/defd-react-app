@@ -1,0 +1,70 @@
+$text-color: rgb(255, 255, 255);
+$text-color-dark: rgb(235, 235, 235);
+$green-shadow: rgb(0, 255, 140);
+$red-shadow: rgb(255, 50, 50);
+$yellow-shadow: rgb(255, 140, 0);
+$blue-shadow: rgb(100, 200, 255);
+
+@mixin neon-text-light($shadow-color-1, $shadow-color-2) {
+    text-shadow: 
+        0 0 7px $shadow-color-1,
+        0 0 10px $shadow-color-1,
+        0 0 21px $shadow-color-2,
+        0 0 42px $shadow-color-2,
+        0 0 82px $shadow-color-2,
+        0 0 92px $shadow-color-2,
+        0 0 102px $shadow-color-2,
+        0 0 151px $shadow-color-2;
+}
+
+@mixin neon-text-dark($shadow-color-1, $shadow-color-2) {
+    text-shadow: 
+        0 0 10px $shadow-color-1,
+        0 0 21px $shadow-color-1,
+        0 0 42px $shadow-color-2,
+        0 0 82px $shadow-color-2;
+}
+
+.wordBox {
+    padding: 0.8em;
+    display: block;
+    font-size: 1.1rem;
+    letter-spacing: 0.07em;
+
+    
+
+    .englishWord {
+        color: $text-color;
+        @include neon-text-dark($text-color, $green-shadow);
+    }
+    
+    .russianWord {
+        color: $text-color;
+        @include neon-text-dark($text-color, $yellow-shadow);
+    }    
+    .separatorWord {
+        margin: 0 1em 0 1em;
+        color: $text-color;
+        @include neon-text-dark($text-color, $red-shadow);
+    }
+    
+    &::first-letter {
+        // color: $blue-shadow;
+        @include neon-text-dark($blue-shadow, $blue-shadow);
+    }
+
+    &:hover {
+        .englishWord {
+            @include neon-text-light($text-color, $green-shadow); 
+        }
+        .russianWord {
+            @include neon-text-light($text-color, $yellow-shadow);
+        }
+        .separatorWord {
+            @include neon-text-light($text-color, $red-shadow);
+        }
+        &::first-letter {
+            @include neon-text-light($blue-shadow, $blue-shadow);
+        }
+    }
+}
