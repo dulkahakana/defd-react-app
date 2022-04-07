@@ -47,12 +47,12 @@ $blue-shadow: rgb(100, 200, 255);
     padding: 0.25em;
     font-size: 1.35em; 
     color: $text-color;
+
     @include neon-text-dark($text-color, $red-shadow);
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 
-    &:hover {
-        
-        @include neon-text-hover($text-color, $red-shadow)
+    &:hover {        
+        @include neon-text-hover($text-color, $yellow-shadow)
     }
 }
 

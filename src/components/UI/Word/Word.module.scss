@@ -7,9 +7,9 @@ $blue-shadow: rgb(100, 200, 255);
 
 @mixin neon-text-light($shadow-color-1, $shadow-color-2) {
     text-shadow: 
-        0 0 7px $shadow-color-1,
+        0 0 7px $shadow-color-2,
         0 0 10px $shadow-color-1,
-        0 0 21px $shadow-color-2,
+        0 0 21px $shadow-color-1,
         0 0 42px $shadow-color-2,
         0 0 82px $shadow-color-2,
         0 0 92px $shadow-color-2,
@@ -20,7 +20,7 @@ $blue-shadow: rgb(100, 200, 255);
 @mixin neon-text-dark($shadow-color-1, $shadow-color-2) {
     text-shadow: 
         0 0 10px $shadow-color-1,
-        0 0 21px $shadow-color-1,
+        0 0 21px $shadow-color-2,
         0 0 42px $shadow-color-2,
         0 0 82px $shadow-color-2;
 }
@@ -29,9 +29,7 @@ $blue-shadow: rgb(100, 200, 255);
     padding: 0.8em;
     display: block;
     font-size: 1.1rem;
-    letter-spacing: 0.07em;
-
-    
+    // letter-spacing: 0.07em;
 
     .englishWord {
         color: $text-color;
@@ -49,7 +47,7 @@ $blue-shadow: rgb(100, 200, 255);
     }
     
     &::first-letter {
-        // color: $blue-shadow;
+        text-transform: uppercase;
         @include neon-text-dark($blue-shadow, $blue-shadow);
     }
 

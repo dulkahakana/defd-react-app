@@ -1,0 +1,29 @@
+$text-color: rgb(255, 255, 255);
+$text-color-dark: rgb(235, 235, 235);
+$green-shadow: rgb(0, 255, 140);
+$red-shadow: rgb(255, 50, 50);
+$yellow-shadow: rgb(255, 140, 0);
+$blue-shadow: rgb(100, 200, 255);
+
+@mixin neon-text($shadow-color-1, $shadow-color-2) {
+    text-shadow: 
+        0 0 7px $shadow-color-1,
+        0 0 10px $shadow-color-1,
+        0 0 21px $shadow-color-2,
+        0 0 42px $shadow-color-2,
+        0 0 102px $shadow-color-2;
+}
+
+.logo {
+    display: block;
+    margin-left: 1rem;
+    font-size: 2.8rem;
+    color: $text-color-dark;
+    letter-spacing: 0.25em;
+
+    @include neon-text($text-color-dark, $red-shadow);
+
+    &::first-letter {
+        @include neon-text($text-color-dark, $blue-shadow)
+    }
+}
