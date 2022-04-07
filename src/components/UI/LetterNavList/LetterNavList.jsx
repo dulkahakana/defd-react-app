@@ -11,7 +11,7 @@ const LetterNavList = ({ sectionsNames }) => {
                     key={sectionName}
                     to={sectionName}
                 >
-                    {sectionName}
+                    {sectionName.toLocaleUpperCase()}
                 </LetterButton>
             )}
         </div>

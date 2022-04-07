@@ -9,9 +9,15 @@ export default class DictionaryService {
         return response.data
     }
 
-    // ? зарпос на получения
+    // ? зарпос на получениe названий секций (алфавит)
     static async getSectionsNameList() {
         const response = await axios.get('http://localhost:5000/dictionary/API/sectionslist')
+        return response.data
+    }
+
+    // ? запрос на получение секции словаря
+    static async getSection(sectionName) {
+        const response = await axios.get(`http://localhost:5000/dictionary/API/${sectionName}`)
         return response.data
     }
 

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 
 // import layout
 import Layout from './Layout'
@@ -16,7 +16,7 @@ const AppRouter = () => {
                 <Route index element={<HomePage />} />
                 <Route path='home' element={<HomePage />} />
                 <Route path='dictionary' element={<DictionaryPage />} >
-                    <Route index element={<SectionPage /> } />
+                    <Route index element={<Navigate to='/dictionary/a' /> } />
                     <Route path=':id' element={<SectionPage />} />
                 </Route>
             </Route>
