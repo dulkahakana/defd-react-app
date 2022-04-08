@@ -1,12 +1,23 @@
+// import react
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import DictionaryService from '../API/DictionaryService'
-import Word from '../components/UI/Word/Word'
-import { useFetching } from '../hooks/useFetching'
+// import service
+import DictionaryService from '../../API/DictionaryService'
+
+// import user hooks
+import { useFetching } from '../../hooks/useFetching'
+
+// import components 
+import Word from '../../components/UI/Word/Word'
+
+// import styles
+import classes from './SectionPage.module.scss'
 
 
 const SectionPage = () => {
+    const {sectionPage} = classes
+
     const params = useParams()
     const [section, setSection] = useState([])
     const [fetchSection, isSectionLoading, sectionError] = useFetching(async (id) => {
@@ -20,7 +31,7 @@ const SectionPage = () => {
     }, [params.id])
 
     return (
-        <div className="section-page">
+        <div className={sectionPage}>
             {/* <div className='section-name'>{params.id.toLocaleUpperCase()}</div> */}
             <ul>
                 {isSectionLoading

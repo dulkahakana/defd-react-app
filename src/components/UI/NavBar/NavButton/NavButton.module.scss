@@ -48,10 +48,11 @@ $blue-shadow: rgb(100, 200, 255);
     color: $text-color;
 
     @include neon-text-dark($text-color, $red-shadow);
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    // transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    // transition: 0.5s;
     
     &:hover {        
-        @include neon-text-hover($text-color, $red-shadow);
+        @include neon-text-hover($text-color, $yellow-shadow);
     }
 
 }
@@ -59,7 +60,8 @@ $blue-shadow: rgb(100, 200, 255);
 
 .navButtonActive {
     @include neon-text-light($text-color, $blue-shadow);
+    // transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
     &:hover {
-        @include neon-text-hover( $text-color, $blue-shadow);
+        @include neon-text-hover( $text-color, $yellow-shadow);
     }
 }

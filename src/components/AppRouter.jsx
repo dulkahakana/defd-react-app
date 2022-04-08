@@ -6,7 +6,8 @@ import Layout from './Layout'
 // import pages
 import HomePage from '../pages/HomePage'
 import DictionaryPage from '../pages/DictionaryPage'
-import SectionPage from '../pages/SectionPage'
+import SectionPage from '../pages/SectionPage/SectionPage'
+import AddWordPage from '../pages/AddWordPage/AddWordPage'
 
 
 const AppRouter = () => {
@@ -18,6 +19,7 @@ const AppRouter = () => {
                 <Route path='dictionary' element={<DictionaryPage />} >
                     <Route index element={<Navigate to='/dictionary/a' /> } />
                     <Route path=':id' element={<SectionPage />} />
+                    <Route path='addword' element={<AddWordPage />} />
                 </Route>
             </Route>
         </Routes>

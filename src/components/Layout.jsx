@@ -1,8 +1,12 @@
+// import react
 import { Outlet } from 'react-router-dom'
+
+// import components
 import Logo from './UI/Logo/Logo'
 import NavBar from './UI/NavBar/NavBar'
 
 const Layout = () => {   
+    
 
     return (
         <div className='App'>
@@ -12,10 +16,10 @@ const Layout = () => {
                 <NavBar/>
             </header>
 
-            <main>
+            <main className='main-page'>
                 <Outlet />
-            </main>  
-                
+            </main>
+                            
         </div>
     )
 }
