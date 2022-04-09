@@ -28,7 +28,8 @@ const AddWordPage = () => {
         }
         console.log(newWord);
 
-        // fetchAddWord(newWord)
+        fetchAddWord(newWord)
+        setWord({english: '', russian: ''})
     }
 
     useMemo(() => {
