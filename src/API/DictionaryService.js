@@ -31,8 +31,7 @@ export default class DictionaryService {
     // TODO и снова CORS ошибка!
     // ? запрос на добавление нового словарь
     static async postWord(word) {
-        const response = await axios.post('http://localhost:5000/dictionary/API/addword', word)
-        console.log(response)
+        await axios.post('http://localhost:5000/dictionary/API/addword', word, postConfig)
     }
     // ? запрос на удаление слова
 

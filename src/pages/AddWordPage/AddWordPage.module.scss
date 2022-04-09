@@ -1,5 +1,5 @@
 $text-color: rgb(255, 255, 255);
-$text-color-dark: rgb(235, 235, 235);
+$text-color-dark: rgb(200, 180, 180);
 $green-shadow: rgb(0, 255, 140);
 $red-shadow: rgb(255, 50, 50);
 $yellow-shadow: rgb(255, 140, 0);
@@ -35,7 +35,7 @@ $blue-shadow: rgb(100, 200, 255);
 @mixin neon-text-dark($shadow-color-1, $shadow-color-2) {
     text-shadow: 
         0 0 10px $shadow-color-1,
-        0 0 21px $shadow-color-1,
+        0 0 21px $shadow-color-2,
         0 0 42px $shadow-color-2,
         0 0 82px $shadow-color-2;
 }
@@ -43,7 +43,8 @@ $blue-shadow: rgb(100, 200, 255);
 // input text light
 @mixin neon-text-input($shadow-color-1, $shadow-color-2) {
     text-shadow: 
-        0 0 10px $shadow-color-1;
+        0 0 10px $shadow-color-1,
+        0 0 13px $shadow-color-2;
 }
 
 
@@ -78,14 +79,13 @@ $blue-shadow: rgb(100, 200, 255);
         color: $text-color;
         letter-spacing: inherit;
         @include neon-text-input($blue-shadow, $blue-shadow);
-
-        &::content {
-            padding: 1em;
-        }
-
+        
         &::placeholder {
+            padding: 1em 0;
             color: $text-color-dark;
         }
+
+        
     }
 
     button {
@@ -96,7 +96,7 @@ $blue-shadow: rgb(100, 200, 255);
         background: none;
         
         font-size: 1.1em;
-        color: $text-color-dark;
+        color: $text-color;
 
 
         @include neon-text-dark($text-color, $green-shadow);
@@ -105,6 +105,11 @@ $blue-shadow: rgb(100, 200, 255);
         
         &:hover {        
             @include neon-text-hover($text-color, $green-shadow);
+        }
+
+        &:disabled {
+            color: $text-color-dark;
+            @include neon-text-dark($text-color-dark, $red-shadow);
         }
     }
 }

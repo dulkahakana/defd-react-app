@@ -32,7 +32,7 @@ const SectionPage = () => {
 
     return (
         <div className={sectionPage}>
-            {/* <div className='section-name'>{params.id.toLocaleUpperCase()}</div> */}
+            {/* <div className='section-name'>{params.id.toUpperCase()}</div> */}
             <ul>
                 {isSectionLoading
                     ? <p>загрузка секции....</p>
