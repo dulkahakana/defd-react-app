@@ -1,10 +1,11 @@
+// import react
 import { Route, Routes, Navigate } from 'react-router-dom'
 
 // import layout
 import Layout from './Layout'
 
 // import pages
-import HomePage from '../pages/HomePage'
+import HomePage from '../pages/HomePage/HomePage'
 import DictionaryPage from '../pages/DictionaryPage'
 import SectionPage from '../pages/SectionPage/SectionPage'
 import AddWordPage from '../pages/AddWordPage/AddWordPage'

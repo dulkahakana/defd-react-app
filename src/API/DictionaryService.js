@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-
+// попытка исправить проблему CORS
 const postConfig = {
     headers: {
         "Access-Control-Allow-Origin": "*",
@@ -9,27 +9,26 @@ const postConfig = {
 }
 export default class DictionaryService {
 
-    // ? запрос на весь словарь
+    // словарь
     static async getAll() {
         const response = await axios.get('http://localhost:5000/dictionary/API')
-        // console.log(response.data)
         return response.data
     }
 
-    // ? зарпос на получениe названий секций (алфавит)
+    // получениe названий секций (алфавит)
     static async getSectionsNameList() {
         const response = await axios.get('http://localhost:5000/dictionary/API/sectionslist')
         return response.data
     }
 
-    // ? запрос на получение секции словаря
+    // получение секции словаря
     static async getSection(sectionName) {
         const response = await axios.get(`http://localhost:5000/dictionary/API/${sectionName}`)
         return response.data
     }
 
-    // TODO и снова CORS ошибка!
-    // ? запрос на добавление нового словарь
+    // TODO и снова CORS ошибка, при использовании npm start
+    // добавление нового слова
     static async postWord(word) {
         await axios.post('http://localhost:5000/dictionary/API/addword', word, postConfig)
     }

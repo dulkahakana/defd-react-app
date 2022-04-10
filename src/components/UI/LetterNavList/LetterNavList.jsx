@@ -1,4 +1,7 @@
+// import components
 import LetterButton from './LetterButton/LetterButton'
+
+// import styles
 import classes from './LetterNavList.module.scss'
 
 const LetterNavList = ({ sectionsNames }) => {

@@ -1,5 +1,7 @@
+// improt react
 import { NavLink } from 'react-router-dom'
 
+// import styles
 import classes from './NavButton.module.scss'
 
 // TODO сделать один navButton для всех меню, передовать два класа default, active

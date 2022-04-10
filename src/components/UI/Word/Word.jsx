@@ -1,3 +1,4 @@
+// import styles
 import classes from './Word.module.scss'
 
 const Word = ({english, russian}) => {
