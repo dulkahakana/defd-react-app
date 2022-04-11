@@ -6,31 +6,18 @@ import DictionaryService from '../../API/DictionaryService'
 import { useFetching } from '../../hooks/useFetching'
 import { useInput } from '../../hooks/useInput'
 
+// import styles
+import classes from './FormAddWord.module.scss'
+
 const FormAddWord = () => {
-    const [word, setWord] = useState({english: '', russian: ''})
-    const [englishWord, setEnglishWord] = useState('')
-    const [russianWord, setRussianWord] = useState('')
+    const {formAddWord} = classes
     const [validWord, setValidWord] = useState(false)
-    const [englishWordProps, resetEnglishWord] = useInput(englishWord)
-    const [russianWordProps, resetRussianWord] = useInput(russianWord)
+    const [englishWordProps, resetEnglishWord] = useInput('')
+    const [russianWordProps, resetRussianWord] = useInput('')
     // console.log(word);
     const [fetchAddWord, isAddWordLoading, addWordError] = useFetching(async (newWord) => {
         await DictionaryService.postWord(newWord)
     })
-
-    // const addNewWord = (e) => {
-    //     e.preventDefault()
-
-    //     const newWord = {
-    //         english: word.english.toLowerCase(),
-    //         russian: word.russian.toLowerCase()
-    //     }        
-
-    //     console.log(newWord)
-
-    //     // fetchAddWord(newWord)
-    //     setWord({english: '', russian: ''})
-    // }
 
     const addNewWord = (e) => {
         e.preventDefault()
@@ -41,42 +28,35 @@ const FormAddWord = () => {
         }        
 
         console.log(newWord)
+        
+        // fetchAddWord(newWord)
 
         resetEnglishWord()
         resetRussianWord()
     }
 
-    // useMemo(() => {
-    //     if (word.english.length > 1 && word.russian.length > 1) {
-    //         setValidWord(true)
-    //     } else {
-    //         setValidWord(false)
-    //     }
-    // }, [word])
+    useMemo(() => {
+        console.log('useMemo')
+        if (englishWordProps.value.length > 1 && russianWordProps.value.length > 1) {
+            setValidWord(true)
+        } else {
+            setValidWord(false)
+        }
+    }, [englishWordProps.value, russianWordProps.value])
 
     return (
-        <form>
-                <input
-                    // value={word.english}
-                    // onChange={e => setWord({
-                    //     ...word,
-                    //     english: e.target.value
-                    // })}
+        <form className={formAddWord}>
+                <input                    
                     {...englishWordProps}
                     type='text'
                     placeholder='новое слово'
                 />
-                <input
-                    // value={word.russian}
-                    // onChange={e => setWord({
-                    //     ...word,
-                    //     russian: e.target.value
-                    // })}
+                <input                    
                     {...russianWordProps}
                     type='text'
                     placeholder='перевод'
                 />
-                <button disabled={false} onClick={addNewWord}>добавить</button>
+                <button disabled={!validWord} onClick={addNewWord}>добавить</button>
         </form>
     )
 }

@@ -1,7 +1,7 @@
-
+// import components
+import FormAddWord from '../../components/FormAddWord/FormAddWord'
 
 // import styles
-import FormAddWord from '../../components/FormAddWord/FormAddWord'
 import classes from './AddWordPage.module.scss'
 
 
