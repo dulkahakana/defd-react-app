@@ -26,6 +26,7 @@ const AddWordPage = () => {
             english: word.english.toLowerCase(),
             russian: word.russian.toLowerCase()
         }
+        
         // console.log(newWord)
 
         fetchAddWord(newWord)
