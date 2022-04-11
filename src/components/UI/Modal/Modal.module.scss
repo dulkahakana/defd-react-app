@@ -16,10 +16,11 @@
 
     .modalContent {
         padding: 1.5em;
-        background-color: aqua;
-
         width: 600px;
-        height: 350px;        
+        height: 350px;
+        
+        display: flex;
+        justify-content: center;
     }
     
 }
