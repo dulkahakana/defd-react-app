@@ -16,7 +16,7 @@ import classes from './SectionPage.module.scss'
 
 
 const SectionPage = () => {
-    const {sectionPage} = classes
+    const {sectionPage, loading} = classes
 
     const params = useParams()
     const [section, setSection] = useState([])
@@ -33,14 +33,18 @@ const SectionPage = () => {
     return (
         <div className={sectionPage}>
             {/* <div className='section-name'>{params.id.toUpperCase()}</div> */}
-            <ul>
                 {isSectionLoading
-                    ? <p>загрузка секции....</p>
-                    : section.map((item, index) =>
-                        <Word key={index} english={item.english} russian={item.russian} />
-                    )
+                    ? <p className={loading}>загрузка секции....</p>
+                    :
+                    <ul> {section.map((item, index) =>
+                        <Word
+                            key={index}
+                            english={item.english}
+                            russian={item.russian}
+                        />
+                    )}
+                    </ul>
                 }
-            </ul>
         </div>
     )
 }

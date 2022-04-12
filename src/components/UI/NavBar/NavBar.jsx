@@ -9,7 +9,6 @@ const NavBar = () => {
     
     return (
         <div className={navBar}>
-            <NavButton to='/'>главная</NavButton>
             <NavButton to='dictionary'>словарь</NavButton>
             <NavButton to='dictionary/addword'>добавить слово</NavButton>            
         </div>

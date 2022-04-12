@@ -15,7 +15,9 @@ const AppRouter = () => {
     return (
         <Routes>
             <Route path='/' element={<Layout />} >
-                <Route index element={<HomePage />} />
+                <Route index element={<Navigate to='/dictionary' />} />
+                
+                {/* <Route index element={<HomePage />} /> */}
                 <Route path='home' element={<HomePage />} />
                 <Route path='dictionary' element={<DictionaryPage />} >
                     <Route index element={<Navigate to='/dictionary/a' /> } />

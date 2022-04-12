@@ -39,38 +39,3 @@ $blue-shadow: rgb(100, 200, 255);
         0 0 42px $shadow-color-2,
         0 0 82px $shadow-color-2;
 }
-
-
-.navButton {
-    display: block;
-    padding-left: 2rem;
-    font-size: 1.1em; 
-    color: $text-color;
-
-    @include neon-text-dark($text-color, $red-shadow);
-    // transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
-    // transition: 0.5s;
-    
-    &:hover {        
-        @include neon-text-hover($text-color, $yellow-shadow);
-    }
-
-}
-
-
-.navButtonActive {
-    @include neon-text-light($text-color, $blue-shadow);
-    // transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
-    &:hover {
-        @include neon-text-hover( $text-color, $yellow-shadow);
-    }
-
-    &:last-child{
-        @include neon-text-light($text-color, $green-shadow);
-        // transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
-        &:hover {
-            @include neon-text-hover( $text-color, $yellow-shadow);
-        }
-    }
-    
-}

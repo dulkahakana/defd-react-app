@@ -1,7 +1,15 @@
+@import '../../styles/neon-font.scss';
+
 // SectionPage
 .sectionPage {
     display: flex;
     margin-top: 1.5em;
     flex-direction: column;
     align-items: center;
+}
+
+.loading {
+    font-size: 1.1em; 
+    color: $text-color;
+    @include neon-text-light($text-color, $red-shadow);
 }

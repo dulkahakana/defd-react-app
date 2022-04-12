@@ -37,24 +37,25 @@ const FormAddWord = () => {
             russian: russianWordProps.value.toLowerCase()
         }
 
-        // console.log(newWord)
+        console.log(newWord)
 
-        fetchAddWord(newWord)
+        // fetchAddWord(newWord)
 
         resetEnglishWord()
         resetRussianWord()
         setActiveModalConfirm(false)
     }
 
-    
-
-    useMemo(() => {
-        console.log('useMemo')
-        if (englishWordProps.value.length > 1 && russianWordProps.value.length > 1) {
+    const wordLengthValid = (wordEng, wordRus, validLength) => {
+        if (wordEng.length > validLength && wordRus.length > validLength) {
             setValidWord(true)
         } else {
             setValidWord(false)
         }
+    }    
+
+    useMemo(() => {
+        wordLengthValid(englishWordProps.value, russianWordProps.value, 1)
     }, [englishWordProps.value, russianWordProps.value])
 
     return (
