@@ -61,12 +61,17 @@ $blue-shadow: rgb(100, 200, 255);
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+    }    
 
     input {
         display: block;
-        margin-top: 2em;
+
         width: 30em;
+
+        margin-top: 2em;
+        &:last-of-type {
+            margin-bottom: 2em;
+        }
         padding: 0.8em 1em;
 
         background-color: rgb(15, 15, 20);
@@ -87,33 +92,64 @@ $blue-shadow: rgb(100, 200, 255);
             padding: 1em 0;
             color: $text-color-dark;
         }
+
+        
         
     }
 
     button {
         display: block;
-        margin-top: 2em;
-        padding: 0.8em 1em;
+        // margin-top: 2em;
+        padding: 0.7em 1.5em;
 
         background: none;
         
-        font-size: 1.1em;
+        font-size: 1.1rem;
         color: $text-color;
 
-
-        @include neon-text-dark($text-color, $green-shadow);
         // transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
-        // transition: 0.5s;
+        // transition: 0.5s;   
         
-        &:hover {        
-            @include neon-text-hover($text-color, $green-shadow);
-        }
-
         &:disabled {
             color: $text-color-dark;
             @include neon-text-dark($text-color-dark, $red-shadow);
         }
     }
+
 }
 
+.okBtn {
+    @include neon-text-dark($text-color, $green-shadow);
+    &:hover {        
+        @include neon-text-hover($text-color, $green-shadow);
+    }
+}
 
+.cancelBtn {
+    @include neon-text-dark($text-color, $red-shadow);
+    &:hover {        
+        @include neon-text-hover($text-color, $red-shadow);
+    }
+}
+
+.modalContent {
+    padding: 3em 6em;
+
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 2.5em;
+    h3 {
+        margin-bottom: 1em;
+
+        color: $text-color;
+        letter-spacing: inherit;
+        @include neon-text-input($blue-shadow, $blue-shadow);
+    }
+}
+
+.modalBtnBox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5em;
+}

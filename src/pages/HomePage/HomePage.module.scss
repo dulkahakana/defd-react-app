@@ -24,8 +24,7 @@ $blue-shadow: rgb(100, 200, 255);
     @include neon-text($blue-shadow, $blue-shadow);
 
     h2 {
-        text-align: center;
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
 
     p {

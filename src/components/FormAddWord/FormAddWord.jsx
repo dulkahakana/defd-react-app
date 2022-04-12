@@ -10,12 +10,14 @@ import { useInput } from '../../hooks/useInput'
 
 // import components
 import Modal from '../UI/Modal/Modal'
+import Word from '../UI/Word/Word'
 
 // import styles
 import classes from './FormAddWord.module.scss'
 
 const FormAddWord = () => {
-    const {formAddWord} = classes
+    const {formAddWord, okBtn, cancelBtn, modalContent, modalBtnBox} = classes
+
     const [validWord, setValidWord] = useState(false)
     const [englishWordProps, resetEnglishWord] = useInput('')
     const [russianWordProps, resetRussianWord] = useInput('')
@@ -68,15 +70,25 @@ const FormAddWord = () => {
                         type='text'
                         placeholder='перевод'
                     />
-                    <button disabled={!validWord} onClick={submit}>добавить</button>
+                    <button className={okBtn} disabled={!validWord} onClick={submit}>добавить</button>
             </form>
             <Modal
                 active={activeModalConfirm}
                 setActive={setActiveModalConfirm}
             >   
-
-                <button onClick={() => setActiveModalConfirm(false)}>отмена</button>
-                <button onClick={addNewWord}>подтвердить</button>
+                <div className={modalContent}>                
+                    <div > 
+                        <h3>Вы хотите добавить:</h3>
+                        <Word 
+                            english={englishWordProps.value.toLowerCase()}
+                            russian={russianWordProps.value.toLowerCase()}
+                        />
+                    </div>
+                    <div className={modalBtnBox}>
+                        <button className={cancelBtn} onClick={() => setActiveModalConfirm(false)}>отмена</button>
+                        <button className={okBtn} onClick={addNewWord}>ок</button>
+                    </div>
+                </div>
             </Modal>
         </div>
     )

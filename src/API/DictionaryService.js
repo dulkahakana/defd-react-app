@@ -27,6 +27,7 @@ export default class DictionaryService {
         return response.data
     }
 
+    // получение кол-во слов
     static async getQuantityWords() {
         const responde = await axios.get('http://localhost:5000/dictionaty/API/quantitywords')
         return responde.data.quantitywords
