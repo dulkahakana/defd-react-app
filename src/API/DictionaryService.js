@@ -27,6 +27,11 @@ export default class DictionaryService {
         return response.data
     }
 
+    static async getQuantityWords() {
+        const responde = await axios.get('http://localhost:5000/dictionaty/API/quantitywords')
+        return responde.data.quantitywords
+    }
+
     // TODO и снова CORS ошибка, при использовании npm start
     // добавление нового слова
     static async postWord(word) {

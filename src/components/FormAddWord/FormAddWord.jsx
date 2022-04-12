@@ -1,5 +1,7 @@
 // import react
 import { useState, useMemo } from 'react'
+
+// import service
 import DictionaryService from '../../API/DictionaryService'
 
 // import user hooks
