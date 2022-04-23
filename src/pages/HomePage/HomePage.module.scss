@@ -1,16 +1,4 @@
-$text-color: rgb(255, 255, 255);
-$text-color-dark: rgb(200, 180, 180);
-$green-shadow: rgb(0, 255, 140);
-$red-shadow: rgb(255, 50, 50);
-$yellow-shadow: rgb(255, 140, 0);
-$blue-shadow: rgb(100, 200, 255);
-
-// text light
-@mixin neon-text($shadow-color-1, $shadow-color-2) {
-    text-shadow: 
-        0 0 2px $shadow-color-1,
-        0 0 8px $shadow-color-2;
-}
+@import '../../styles/neon-font.scss';
 
 .homePage {
     margin-top: 1rem;
@@ -25,6 +13,10 @@ $blue-shadow: rgb(100, 200, 255);
 
     h2 {
         font-size: 1.3em;
+
+        &:first-letter {
+            @include neon-text($red-shadow, $red-shadow);
+        }
     }
 
     p {
@@ -32,8 +24,24 @@ $blue-shadow: rgb(100, 200, 255);
     }
 }
 
+.numberBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10em;
+    p {
+        font-size: 4rem;
+        cursor: pointer;
+        transition: 0.4s;
+        &:hover {
+            @include neon-text-light($red-shadow, $red-shadow);
+            transform: scale(1.7);
+        }
+    }
+}
+
 .redText {
     color: $text-color;
     letter-spacing: inherit;
-    @include neon-text($red-shadow, $red-shadow);
+    @include neon-text($text-color, $red-shadow);
 }

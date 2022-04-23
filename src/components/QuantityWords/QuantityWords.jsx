@@ -21,14 +21,14 @@ const QuantityWords = () => {
 
     useEffect(() => {
         fetchQuantityWords()
+        // console.log('fetchQuantityWords')
     }, [])
 
 
     return (
         <div className={quantityWordsContainer}>
             <p>кол-во слов:</p>
-            <p>{quantityWords}</p>
-            
+            <p>{quantityWords}</p>            
         </div>
     )
 }
