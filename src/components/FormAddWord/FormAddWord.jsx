@@ -39,9 +39,9 @@ const FormAddWord = () => {
             russian: russianWordProps.value.toLowerCase()
         }
 
-        console.log(newWord)
+        // console.log(newWord)
 
-        // fetchAddWord(newWord)
+        fetchAddWord(newWord)
         setQuantityWords(quantityWords + 1)
         resetEnglishWord()
         resetRussianWord()
