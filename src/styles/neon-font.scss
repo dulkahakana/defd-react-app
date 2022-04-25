@@ -19,8 +19,8 @@ $blue-shadow: rgb(100, 200, 255);
 @mixin neon-text-light($shadow-color-1, $shadow-color-2) {
     text-shadow: 
         0 0 7px $shadow-color-2,
-        0 0 10px $shadow-color-2,
-        0 0 21px $shadow-color-2,
+        0 0 10px $shadow-color-1,
+        0 0 21px $shadow-color-1,
         0 0 42px $shadow-color-2,
         0 0 82px $shadow-color-2,
         0 0 92px $shadow-color-2,
@@ -44,8 +44,39 @@ $blue-shadow: rgb(100, 200, 255);
 // dark light
 @mixin neon-text-dark($shadow-color-1, $shadow-color-2) {
     text-shadow: 
-        // 0 0 10px $shadow-color-1,
+        0 0 10px $shadow-color-1,
         0 0 21px $shadow-color-1,
         0 0 42px $shadow-color-2,
         0 0 82px $shadow-color-2;
+}
+
+
+// from form
+// input border default light
+@mixin neon-border-light($shadow-color-1, $shadow-color-2) {
+    box-shadow: 
+        0 0 2px $shadow-color-1,
+        0 0 5px $shadow-color-2,
+        0 0 10px $shadow-color-2,
+        0 0 2px inset $shadow-color-1,
+        0 0 5px inset $shadow-color-2;
+}
+
+// input border focus light 
+@mixin neon-border-focus-light($shadow-color-1, $shadow-color-2) {
+    box-shadow: 
+        0 0 2px $shadow-color-1,
+        0 0 5px $shadow-color-1,
+        0 0 10px $shadow-color-2,
+        0 0 13px $shadow-color-2,
+        0 0 2px inset $shadow-color-1,
+        0 0 5px inset $shadow-color-2,
+        0 0 10px inset $shadow-color-2;
+}
+
+// input text light
+@mixin neon-text-input($shadow-color-1, $shadow-color-2) {
+    text-shadow: 
+        0 0 2px $shadow-color-1,
+        0 0 8px $shadow-color-2;
 }

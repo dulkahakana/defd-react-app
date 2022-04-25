@@ -28,7 +28,7 @@ const QuantityWords = () => {
     return (
         <div className={quantityWordsContainer}>
             <p>кол-во слов:</p>
-            <p>{quantityWords}</p>            
+            <p>{quantityWords}</p>        
         </div>
     )
 }
