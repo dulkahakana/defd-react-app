@@ -11,13 +11,12 @@ import { useInput } from '../../hooks/useInput'
 
 // import components
 import Modal from '../UI/Modal/Modal'
-import Word from '../UI/Word/Word'
 
 // import styles
 import classes from './FormAddWord.module.scss'
 
 const FormAddWord = () => {
-    const {formAddWord, okBtn, cancelBtn, modalContent, modalBtnBox} = classes
+    const {formAddWord, okBtn, cancelBtn, modalContent, modalBtnBox, englishWord, russianWord, separatorWord} = classes
 
     const [validWord, setValidWord] = useState(false)
     const [englishWordProps, resetEnglishWord] = useInput('')
@@ -82,10 +81,9 @@ const FormAddWord = () => {
                 <div className={modalContent}>                
                     <div > 
                         <h3>Вы хотите добавить:</h3>
-                        <Word 
-                            english={englishWordProps.value.toLowerCase()}
-                            russian={russianWordProps.value.toLowerCase()}
-                        />
+                        <span className={englishWord}>{englishWordProps.value.toLowerCase()}</span>
+                        <span className={separatorWord}>-</span>
+                        <span className={russianWord}>{russianWordProps.value.toLowerCase()}</span>
                     </div>
                     <div className={modalBtnBox}>
                         <button className={cancelBtn} onClick={() => setActiveModalConfirm(false)}>отмена</button>

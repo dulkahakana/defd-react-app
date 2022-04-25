@@ -86,7 +86,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 2.5em;
     h3 {
-        margin-bottom: 1em;
+        margin-bottom: 1.3em;
 
         color: $text-color;
         letter-spacing: inherit;
@@ -98,4 +98,19 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.5em;
+}
+
+.englishWord {
+    color: $text-color;
+    @include neon-text-dark($text-color, $green-shadow);
+}
+
+.russianWord {
+    color: $text-color;
+    @include neon-text-dark($text-color, $yellow-shadow);
+}    
+.separatorWord {
+    margin: 0 1em 0 1em;
+    color: $text-color;
+    @include neon-text-dark($text-color, $red-shadow);
 }

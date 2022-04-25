@@ -15,6 +15,8 @@ const Word = ({english, russian}) => {
 
     const deleteWord = (word) => {
         console.log(word)
+        // fetchDeleteWord(word)
+        // TODO не работает
     }
 
 
