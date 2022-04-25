@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 
 // import service
 import DictionaryService from '../../API/DictionaryService'
+import { QuantityWordsContext } from '../../context/QuantityWordsProvider'
 
 // import user hooks
 import { useFetching } from '../../hooks/useFetching'
@@ -11,8 +12,9 @@ import classes from './QuantityWords.module.scss'
 
 const QuantityWords = () => {
     const {quantityWordsContainer} = classes
+    // const [quantityWords, setQuantityWords] = useState(0)
 
-    const [quantityWords, setQuantityWords] = useState(0)
+    const [quantityWords, setQuantityWords] = useContext(QuantityWordsContext)
 
     const [fetchQuantityWords, isQuantityWordsLoading, quantityWordsError] = useFetching(async () => {
         const response = await DictionaryService.getQuantityWords()
