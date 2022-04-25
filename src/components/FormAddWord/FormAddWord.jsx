@@ -1,8 +1,9 @@
 // import react
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useContext } from 'react'
 
 // import service
 import DictionaryService from '../../API/DictionaryService'
+import { QuantityWordsContext } from '../../context/QuantityWordsProvider'
 
 // import user hooks
 import { useFetching } from '../../hooks/useFetching'
@@ -25,6 +26,7 @@ const FormAddWord = () => {
     const [fetchAddWord, isAddWordLoading, addWordError] = useFetching(async (newWord) => {
         await DictionaryService.postWord(newWord)
     })
+    const [quantityWords, setQuantityWords] = useContext(QuantityWordsContext)
 
     const submit = (e) => {
         e.preventDefault()
@@ -40,7 +42,7 @@ const FormAddWord = () => {
         console.log(newWord)
 
         // fetchAddWord(newWord)
-
+        setQuantityWords(quantityWords + 1)
         resetEnglishWord()
         resetRussianWord()
         setActiveModalConfirm(false)

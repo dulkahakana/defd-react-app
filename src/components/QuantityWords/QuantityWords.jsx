@@ -12,7 +12,6 @@ import classes from './QuantityWords.module.scss'
 
 const QuantityWords = () => {
     const {quantityWordsContainer} = classes
-    // const [quantityWords, setQuantityWords] = useState(0)
 
     const [quantityWords, setQuantityWords] = useContext(QuantityWordsContext)
 
@@ -23,7 +22,6 @@ const QuantityWords = () => {
 
     useEffect(() => {
         fetchQuantityWords()
-        // console.log('fetchQuantityWords')
     }, [])
 
 
