@@ -43,6 +43,9 @@ const SectionPage = () => {
             english: trashWord.english,
             russian: trashWord.russian
         }
+
+        setSection(section.filter(item => item.english !== trashWord.english))
+
         fetchDeleteWord(word)
         setQuantityWords(quantityWors - 1)
         setActiveModalConfirm(false)
