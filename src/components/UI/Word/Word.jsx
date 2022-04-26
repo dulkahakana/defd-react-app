@@ -37,13 +37,6 @@ const Word = ({english, russian}) => {
     return (
         <>
 
-            <li className={wordBox}>
-                <span className={englishWord}>{english}</span>
-                <span className={separatorWord}>-</span>
-                <span className={russianWord}>{russian}</span>
-                <button className={deleteBtn} onClick={() => setActiveModalConfirm(true)}>x</button>
-            </li>
-
             <ModalConfirm
                 activeModalConfirm={activeModalConfirm}
                 setActiveModalConfirm={setActiveModalConfirm}
@@ -52,6 +45,13 @@ const Word = ({english, russian}) => {
                 russian={russian}
                 action={deleteWord}            
             />
+
+            <li className={wordBox}>
+                <span className={englishWord}>{english}</span>
+                <span className={separatorWord}>-</span>
+                <span className={russianWord}>{russian}</span>
+                <button className={deleteBtn} onClick={() => setActiveModalConfirm(true)}>x</button>
+            </li>            
 
         </>        
     )
