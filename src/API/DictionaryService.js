@@ -41,7 +41,8 @@ export default class DictionaryService {
 
     // запрос на удаление слова
     static async deleteWord(word) {
-        await axios.delete('http://localhost:5000/dictionary/API', word, postConfig)
+        console.log(word)
+        await axios.delete('http://localhost:5000/dictionary/API', {data: word})
     }
 
     // ? запрос на изменение слова

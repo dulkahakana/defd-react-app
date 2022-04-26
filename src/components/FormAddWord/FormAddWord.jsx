@@ -3,6 +3,8 @@ import { useState, useMemo, useContext } from 'react'
 
 // import service
 import DictionaryService from '../../API/DictionaryService'
+
+// import context
 import { QuantityWordsContext } from '../../context/QuantityWordsProvider'
 
 // import user hooks
@@ -10,13 +12,13 @@ import { useFetching } from '../../hooks/useFetching'
 import { useInput } from '../../hooks/useInput'
 
 // import components
-import Modal from '../UI/Modal/Modal'
+import ModalConfirm from '../UI/ModalConfirm/ModalConfirm'
 
 // import styles
 import classes from './FormAddWord.module.scss'
 
 const FormAddWord = () => {
-    const {formAddWord, okBtn, cancelBtn, modalContent, modalBtnBox, englishWord, russianWord, separatorWord} = classes
+    const {formAddWord, okBtn} = classes
 
     const [validWord, setValidWord] = useState(false)
     const [englishWordProps, resetEnglishWord] = useInput('')
@@ -61,6 +63,7 @@ const FormAddWord = () => {
 
     return (
         <div className={formAddWord}>
+
             <form>
                     <input                    
                         {...englishWordProps}
@@ -74,23 +77,16 @@ const FormAddWord = () => {
                     />
                     <button className={okBtn} disabled={!validWord} onClick={submit}>добавить</button>
             </form>
-            <Modal
-                active={activeModalConfirm}
-                setActive={setActiveModalConfirm}
-            >   
-                <div className={modalContent}>                
-                    <div > 
-                        <h3>Вы хотите добавить:</h3>
-                        <span className={englishWord}>{englishWordProps.value.toLowerCase()}</span>
-                        <span className={separatorWord}>-</span>
-                        <span className={russianWord}>{russianWordProps.value.toLowerCase()}</span>
-                    </div>
-                    <div className={modalBtnBox}>
-                        <button className={cancelBtn} onClick={() => setActiveModalConfirm(false)}>отмена</button>
-                        <button className={okBtn} onClick={addNewWord}>ок</button>
-                    </div>
-                </div>
-            </Modal>
+
+            <ModalConfirm
+                activeModalConfirm={activeModalConfirm}
+                setActiveModalConfirm={setActiveModalConfirm}
+                messageConfirm='Добавить:'
+                english={englishWordProps.value.toLowerCase()}
+                russian={russianWordProps.value.toLowerCase()}
+                action={addNewWord}
+            />
+
         </div>
     )
 }

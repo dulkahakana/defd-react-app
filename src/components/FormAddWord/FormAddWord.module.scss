@@ -52,9 +52,6 @@
         
         font-size: 1.1rem;
         color: $text-color;
-
-        // transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
-        // transition: 0.5s;   
         
         &:disabled {
             color: $text-color-dark;
@@ -71,46 +68,46 @@
     }
 }
 
-.cancelBtn {
-    @include neon-text-dark($text-color, $red-shadow);
-    &:hover {        
-        @include neon-text-hover($text-color, $red-shadow);
-    }
-}
+// .cancelBtn {
+//     @include neon-text-dark($text-color, $red-shadow);
+//     &:hover {        
+//         @include neon-text-hover($text-color, $red-shadow);
+//     }
+// }
 
-.modalContent {
-    padding: 3em 6em;
+// .modalContent {
+//     padding: 3em 6em;
 
-    text-align: center;
+//     text-align: center;
 
-    background-color: rgba(0, 0, 0, 0.9);
-    border-radius: 2.5em;
-    h3 {
-        margin-bottom: 1.3em;
+//     background-color: rgba(0, 0, 0, 0.9);
+//     border-radius: 2.5em;
+//     h3 {
+//         margin-bottom: 1.3em;
 
-        color: $text-color;
-        letter-spacing: inherit;
-        @include neon-text-input($blue-shadow, $blue-shadow);
-    }
-}
+//         color: $text-color;
+//         letter-spacing: inherit;
+//         @include neon-text-input($blue-shadow, $blue-shadow);
+//     }
+// }
 
-.modalBtnBox {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5em;
-}
+// .modalBtnBox {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-top: 1.5em;
+// }
 
-.englishWord {
-    color: $text-color;
-    @include neon-text-dark($text-color, $green-shadow);
-}
+// .englishWord {
+//     color: $text-color;
+//     @include neon-text-dark($text-color, $green-shadow);
+// }
 
-.russianWord {
-    color: $text-color;
-    @include neon-text-dark($text-color, $yellow-shadow);
-}    
-.separatorWord {
-    margin: 0 1em 0 1em;
-    color: $text-color;
-    @include neon-text-dark($text-color, $red-shadow);
-}
+// .russianWord {
+//     color: $text-color;
+//     @include neon-text-dark($text-color, $yellow-shadow);
+// }    
+// .separatorWord {
+//     margin: 0 1em 0 1em;
+//     color: $text-color;
+//     @include neon-text-dark($text-color, $red-shadow);
+// }

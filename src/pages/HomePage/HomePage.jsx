@@ -2,7 +2,7 @@
 
 
 // import styles
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import classes from './HomePage.module.scss'
 
 
